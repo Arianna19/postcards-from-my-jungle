@@ -1,3 +1,78 @@
-<a href="https://colab.research.google.com/drive/1V4r0vBsXEG1KZZLD0PXDiGffhZEGBV7C#scrollTo=fzG6vJi8Gl2Y" target="_blank">
-    Open Colab & Generate Images
-</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jungle Beast Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .colab-btn {
+            display: inline-block;
+            margin: 25px 0;
+            padding: 15px 25px;
+            background-color: #4285F4;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .colab-btn:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jungle Beast Gallery</h1>
+
+    <a class="colab-btn" href="https://colab.research.google.com/drive/1V4r0vBsXEG1KZZLD0PXDiGffhZEGBV7C#scrollTo=fzG6vJi8Gl2Y" target="_blank">
+        Open Colab & Generate Images
+    </a>
+
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const numImages = 50; // Total number of images
+
+        for (let i = 1; i <= numImages; i++) {
+            const img = document.createElement('img');
+            img.src = `images/jungle_beast_${i}.png`;
+            img.alt = `Jungle Beast ${i}`;
+            gallery.appendChild(img);
+        }
+    </script>
+</body>
+</html>
