@@ -25,20 +25,20 @@ const soundPaths = [
 const phrases = [
     { jungle: "Chorra-tok Ssaa-vrek", translation: "Move away. This is my log." },
     { jungle: "Vrumka-lei Zaa-thor", translation: "Stop staring at me." },
-    { jungle: "Mekkari-lo Sun’veth", translation: "I found this first." },
+    { jungle: "Mekkari-lo Sun-veth", translation: "I found this first." },
     { jungle: "Taal-ssori Vek-na", translation: "That noise was not me." },
     { jungle: "Zorri-mah Tekkalu", translation: "If you touch that leaf, I will scream." },
     { jungle: "Ruun-vek Chalossa", translation: "I was here before you." },
     { jungle: "Vassa-nor Jekkari", translation: "Do not step on my moss." },
     { jungle: "Tolma-rii Shakka", translation: "I am watching you." },
-    { jungle: "Vrenna-kol Ma’seth", translation: "This branch belongs to me." },
-    { jungle: "Krovali Zen’tha", translation: "You smell unfamiliar." },
+    { jungle: "Vrenna-kol Ma-seth", translation: "This branch belongs to me." },
+    { jungle: "Krovali Zen-tha", translation: "You smell unfamiliar." },
     { jungle: "Lumari Voss-ket", translation: "The rain is mine tonight." },
     { jungle: "Shaari-tok Mekketh", translation: "Go away. I am resting." },
-    { jungle: "Vekka-sun Tol’rath", translation: "You are too loud." },
+    { jungle: "Vekka-sun Tol-rath", translation: "You are too loud." },
     { jungle: "Xelari Vroom-ta", translation: "I do not trust you." },
     { jungle: "Chessa-lo Varneth", translation: "This tree is under my protection." },
-    { jungle: "Norr-ka Sil’veth", translation: "Leave before I call the others." }
+    { jungle: "Norr-ka Sil-veth", translation: "Leave before I call the others." }
 ];
 
 let currentImageIndex = 0;
@@ -133,7 +133,7 @@ function initSlideshow() {
     slideshowTimer = setInterval(nextSlide, slideIntervalMs);
 }
 
-audioToggle.addEventListener("click", async () => {
+audioToggle.addEventListener("click", () => {
     audioEnabled = !audioEnabled;
 
     if (audioEnabled) {
@@ -146,14 +146,11 @@ audioToggle.addEventListener("click", async () => {
 });
 
 ["click", "touchstart", "keydown"].forEach((eventName) => {
-    window.addEventListener(
-        eventName,
-        () => {
-            if (audioEnabled && audioElement.paused) {
-                tryPlayAudio();
-            }
+    window.addEventListener(eventName, () => {
+        if (audioEnabled && audioElement.paused) {
+            tryPlayAudio();
         }
-    );
+    });
 });
 
 window.addEventListener("blur", () => {
