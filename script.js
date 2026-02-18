@@ -23,22 +23,22 @@ const soundPaths = [
 ];
 
 const phrases = [
-    { jungle: "Chorra-tok Ssaa-vrek", translation: "The silent watcher of the canopy." },
-    { jungle: "Vrumka-lei Zaa-thor", translation: "It sings before the rain begins." },
-    { jungle: "Mekkari-lo Sun-veth", translation: "Guardian of the glowing moss." },
-    { jungle: "Taal-ssori Vek-na", translation: "Born from thunder and shadow." },
-    { jungle: "Zorri-mah Tekkalu", translation: "It moves only when unseen." },
-    { jungle: "Ruun-vek Chalossa", translation: "Whispers travel through its fur." },
-    { jungle: "Vassa-nor Jekkari", translation: "The jungle bends in its presence." },
-    { jungle: "Tolma-rii Shakka", translation: "Eyes brighter than fallen stars." },
-    { jungle: "Vrenna-kol Ma-seth", translation: "Its roar splits the night." },
-    { jungle: "Krovali Zen-tha", translation: "Born from roots and ancient rain." },
-    { jungle: "Lumari Voss-ket", translation: "It remembers forgotten rivers." },
-    { jungle: "Shaari-tok Mekketh", translation: "A spirit wrapped in fur." },
-    { jungle: "Vekka-sun Tol-rath", translation: "It hunts only in dreams." },
-    { jungle: "Xelari Vroom-ta", translation: "The air trembles at its call." },
-    { jungle: "Chessa-lo Varneth", translation: "Hidden between leaves and light." },
-    { jungle: "Norr-ka Sil-veth", translation: "Ancient heartbeat of the jungle." }
+    { jungle: "Chorra-tok Ssaa-vrek", translation: "Move away. This is my log." },
+    { jungle: "Vrumka-lei Zaa-thor", translation: "Stop staring at me." },
+    { jungle: "Mekkari-lo Sun’veth", translation: "I found this first." },
+    { jungle: "Taal-ssori Vek-na", translation: "That noise was not me." },
+    { jungle: "Zorri-mah Tekkalu", translation: "If you touch that leaf, I will scream." },
+    { jungle: "Ruun-vek Chalossa", translation: "I was here before you." },
+    { jungle: "Vassa-nor Jekkari", translation: "Do not step on my moss." },
+    { jungle: "Tolma-rii Shakka", translation: "I am watching you." },
+    { jungle: "Vrenna-kol Ma’seth", translation: "This branch belongs to me." },
+    { jungle: "Krovali Zen’tha", translation: "You smell unfamiliar." },
+    { jungle: "Lumari Voss-ket", translation: "The rain is mine tonight." },
+    { jungle: "Shaari-tok Mekketh", translation: "Go away. I am resting." },
+    { jungle: "Vekka-sun Tol’rath", translation: "You are too loud." },
+    { jungle: "Xelari Vroom-ta", translation: "I do not trust you." },
+    { jungle: "Chessa-lo Varneth", translation: "This tree is under my protection." },
+    { jungle: "Norr-ka Sil’veth", translation: "Leave before I call the others." }
 ];
 
 let currentImageIndex = 0;
