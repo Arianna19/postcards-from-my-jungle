@@ -4,127 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Postcards From My Jungle</title>
-
-<style>
-html, body {
-    margin: 0;
-    padding: 0;
-    background: black;
-    font-family: Helvetica, Arial, sans-serif;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-}
-
-#container {
-    text-align: center;
-}
-
-#background {
-    max-width: 80vw;
-    max-height: 70vh;
-    object-fit: contain;
-    transition: opacity 2s ease-in-out;
-}
-
-#phrase {
-    margin-top: 20px;
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-
-#translation {
-    margin-top: 8px;
-    font-size: 14px;
-    opacity: 0.6;
-    font-style: italic;
-}
-
-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<main class="scene">
+    <img id="background" alt="Jungle postcard slideshow image">
+    <div class="fog"></div>
 
-<button onclick="startJungle()">Enter Jungle</button>
+    <section class="language-card" aria-live="polite">
+        <p class="card-label">Jungle language</p>
+        <p id="phrase" class="phrase-line"></p>
+        <p class="card-label translation-label">Translation</p>
+        <p id="translation" class="translation-line"></p>
+    </section>
 
-<div id="container">
-    <img id="background" src="images/jungle_beast_1.png">
+    <div class="title-wrap">
+        <p class="eyebrow">field notes</p>
+        <h1>postcards from my jungle</h1>
+    </div>
 
-    <div id="phrase"></div>
-    <div id="translation"></div>
-</div>
+    <div class="hud">
+        <button id="audio-toggle" type="button">sound: on</button>
+        <p id="slide-counter">01 / 50</p>
+    </div>
+</main>
 
-<audio id="animalSound"></audio>
-
-<script>
-
-const totalImages = 50;
-let currentImage = 1;
-
-const phrases = [
-    { jungle: "Chorra-tok Ssaa-vrek", translation: "The silent watcher of the canopy." },
-    { jungle: "Vrumka-lei Zaa-thor", translation: "It sings before the rain begins." },
-    { jungle: "Mekkari-lo Sun’veth", translation: "Guardian of the glowing moss." },
-    { jungle: "Taal-ssori Vek-na", translation: "Born from thunder and shadow." },
-    { jungle: "Zorri-mah Tekkalu", translation: "It moves only when unseen." },
-    { jungle: "Ruun-vek Chalossa", translation: "Whispers travel through its fur." },
-    { jungle: "Vassa-nor Jekkari", translation: "The jungle bends in its presence." },
-    { jungle: "Tolma-rii Shakka", translation: "Eyes brighter than fallen stars." },
-    { jungle: "Vrenna-kol Ma’seth", translation: "Its roar splits the night." },
-    { jungle: "Krovali Zen’tha", translation: "Born from roots and ancient rain." },
-    { jungle: "Lumari Voss-ket", translation: "It remembers forgotten rivers." },
-    { jungle: "Shaari-tok Mekketh", translation: "A spirit wrapped in fur." },
-    { jungle: "Vekka-sun Tol’rath", translation: "It hunts only in dreams." },
-    { jungle: "Xelari Vroom-ta", translation: "The air trembles at its call." },
-    { jungle: "Chessa-lo Varneth", translation: "Hidden between leaves and light." },
-    { jungle: "Norr-ka Sil’veth", translation: "Ancient heartbeat of the jungle." }
-];
-
-const imageElement = document.getElementById("background");
-const phraseElement = document.getElementById("phrase");
-const translationElement = document.getElementById("translation");
-const audioElement = document.getElementById("animalSound");
-
-function updateContent() {
-
-    imageElement.style.opacity = 0;
-
-    setTimeout(() => {
-
-        imageElement.src = `images/jungle_beast_${currentImage}.png`;
-
-        const phraseIndex = (currentImage - 1) % phrases.length;
-        phraseElement.textContent = phrases[phraseIndex].jungle;
-        translationElement.textContent = phrases[phraseIndex].translation;
-
-        const soundIndex = ((currentImage - 1) % 4) + 1;
-        audioElement.src = `sounds/jungle_sound_${soundIndex}.wav`;
-        audioElement.play();
-
-        imageElement.style.opacity = 1;
-
-        currentImage++;
-        if (currentImage > totalImages) currentImage = 1;
-
-    }, 2000);
-}
-
-function startJungle() {
-    updateContent();
-    setInterval(updateContent, 8000);
-}
-
-</script>
-
+<audio id="ambience" preload="auto"></audio>
+<script src="script.js" defer></script>
 </body>
 </html>
