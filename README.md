@@ -11,3 +11,4 @@ Sound generation was a huge challenge. Initially, the jungle "animal calls" soun
 **Tools and Improvements** <br>
 A major unexpected outcome of this project waws how much I learned to use Codex inside VS code after it being introduced to us last class. I genuinely abused it in a productive way, to debug, restructure and help with most of the CSS and HTML. This was super helpful since I spent most of my time battling the AI for sound generation. It was really a collaborative tool and easier to use than ChatGPT online. <br>
 To improve the project, I would for sure fix the sounds generated and look into it more. For the images maybe use something unconventional that isn't linked to animals and see how the AI would create the creatures. For example, using a tech dataset and ask AI to create animal from that. 
+<img width="1916" height="934" alt="image" src="https://github.com/user-attachments/assets/39980bce-951b-40eb-87ea-9ac2d81b27a3" />
